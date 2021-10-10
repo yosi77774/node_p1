@@ -1,0 +1,37 @@
+<html>
+    <body>
+        
+        <h1>Search Movies Page</h1>
+
+        <form action="/Search_M/getdata" method="POST">
+
+            <label for="Name">Name:</label><br>
+            <input type="text" id="Name" name="Name"><br>
+            <label for="Language">Language:</label><br>  
+            <select id="Language" name="Language">
+              <option value="English">English</option>
+              <option value="Hebrew">Hebrew</option>
+            </select>
+          
+
+            <label for="genres">genres:</label><br>
+            
+              <select id="genres" name="genres">
+                <option value="Thriller">Thriller</option>
+                <option value="War">War</option>
+                <option value="Historitic">Historitic</option>
+                <option value="Crime">Crime</option>
+                <option value="Drama">Drama</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Action">Action</option>
+                <option value="Science-Fiction">Science-Fiction</option>
+                <option value="fantasy">Horror</option>
+                <option value="Action">Romance</option>
+              </select>
+
+            <input type="submit" value="Send">
+
+          </form> 
+
+    </body>
+</html>

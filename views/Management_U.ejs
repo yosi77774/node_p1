@@ -1,0 +1,31 @@
+<html>
+
+  <head>
+
+    <h1>Users Management Page</h1>
+
+  </head>
+
+  <body>
+
+    <table border="1" >
+      <tr>
+          <th>Users</th>
+
+    <% Users.forEach(function(Users) { %>
+        
+        <tr>
+          <td><%= Users.Username %> <a href="/Management_U/<%=Users.id%>" >  delete  </a> <a href='/Management_U/{"id":"<%=Users.id%>","Username":"<%=Users.Username%>","Password":"<%=Users.Password%>","Transactions":"<%=Users.Transactions%>","submit":"update"}' >update</a></td>
+        </tr>
+    
+    <% }) %>
+
+  </tr>
+</table>
+
+<br><br>
+<a href='/Management_U/{"Username":"","Password":"","submit":"Add"}' >Add New User</a>
+
+  </body>
+
+</html>

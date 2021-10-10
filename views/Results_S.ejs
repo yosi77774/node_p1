@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <style>
+
+            table.a {
+              position: absolute;
+              left: auto;
+              width: 100px;
+              height: 120px;
+            } 
+            
+            table.b {
+              position: absolute;
+              left: 110px;
+              width: 200px;
+              height: 120px;
+            } 
+            </style>
+    </head>
+    <body>
+        
+        <h1>Search Results Page</h1>
+
+        <table border="1" class="a">
+            <tr>
+                <th>movie Search</th>
+                <% Movies.Movies.forEach(function(obj) { %>
+        
+                    <tr>
+                      <td><a href='/Results_S/{"name":"<%=obj.name%>","id":"<%=obj.id%>","genres":"<%=obj.genres%>","Language":"<%=obj.language%>","image":"1111"}'  ><%= obj.name %></a> </td>
+                    </tr>
+                
+                <% }) %>
+            </tr>
+        </table>
+        <table border="1" class="b">
+            <tr>
+                <th>SAME GENRE</th>
+                <% Movies.M_genres.forEach(function(obj) { %>
+        
+                    <tr>
+                        <td><a href='/Results_S/{"name":"<%=obj.name%>","id":"<%=obj.id%>","genres":"<%=obj.genres%>","Language":"<%=obj.language%>","image":"11111"}' ><%= obj.name %></a> </td>
+                    </tr>
+                
+                <% }) %>
+              </tr>
+    </table>
+        
+       
+    </body>
+</html>

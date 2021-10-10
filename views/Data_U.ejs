@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h1>User data Page</h1>
+  </head>
+  <body>
+
+    <form action="/Data_U/<%=Users.submit%>"  method="POST">
+
+        <label for="Username">User name:</label><br>
+        <input type="text" id="Username" name="Username" value="<%=Users.Username%>"><br>
+        <label for="Password">Password:</label><br>
+        <input type="text" id="Password" name="Password" value="<%=Users.Password%>"><br>
+        <label for="Transactions">Num of Transactions:</label><br>
+        <input type="text" id="Transactions" name="Transactions" value="<%=Users.Transactions%>"><br>
+        <label for="id">Id:</label><br>
+        <input type="text" id="id" name="id" value="<%=Users.id%>"><br><br>
+
+
+        <input type="submit" value="<%=Users.submit%>">
+
+      </form> 
+
+  </body>
+</html>
