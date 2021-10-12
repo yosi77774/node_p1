@@ -1,10 +1,38 @@
 <html>
+    <head>
+        <script>
+            function validateForm() {
+             // let x = document.forms["myForm"]["genres"]
+              let x = document.getElementsByName("genres")
+              let cont = 0
+              let i = 0
+             
+              for (i=0 ; i < 6 ; i++){
+              
+                  if(x[i].checked === true){
+                      cont++
+                     
+                  }
+              }
+              console.log(cont);
+              if (cont != 3) {
+                alert("Three genres should be introduced");
+                return false;
+              }
+              else{
+                return true
+              }
+             
+
+            }
+            </script>
+    </head>
     <body>
         
         <h1>Create Movie Page</h1>
 
          
-             <form action="/Create_M/getdata" method="POST">
+             <form name="myForm" action="/Create_M/getdata" onsubmit="return validateForm()" method="POST" >
 
                 <label for="Name">Name:</label><br>
                 <input type="text" id="Name" name="Name"><br>
@@ -26,6 +54,7 @@
                 <label for="genres5"> drama</label><br>
                 <input type="checkbox" id="genres6" name="genres" value="Fantasy">
                 <label for="genres6"> fantasy</label><br><br>
+                <input type="hidden" id="image" name="image" value= "0" >
 
                 <input type="submit" value="Send">
               </form> 

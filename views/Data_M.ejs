@@ -7,7 +7,12 @@
         Name : <%= Data.name %> <br/>
         Genres : <%= Data.genres %><br/>
         Language : <%= Data.Language %><br/>
-    
+
+        <% if(Data.image != 0) { %>
+            <img src= <%= Data.image %> alt="image"><br/>
+        <% } %>
+        
+
         <a href="/Menu">Back to Menu page</a>
 
     </body>

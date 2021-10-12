@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   res.render('Results_S', {});
   
 });
-
+/*
 router.get('/:obj', async function(req, res, next) {
 
     let Data =req.params.obj;
@@ -25,7 +25,32 @@ router.get('/:obj', async function(req, res, next) {
    console.log("----------img-------------"+Data2.image);
   
     res.render('Data_M' , {Data : Data2});
-  });
+  });*/
+
+  router.post('/getdata', async function(req, res, next) {
+
+    let obg = req.body.custId;
+    var Data2 = JSON.parse(obg);
+
+    if (req.session.statusUser == 1 && req.session.date != new Date().toDateString() || req.session.maxTransactions <= req.session.NumberTransactions)
+    {
+       res.redirect('/users');
+    }
+     
+    req.session.NumberTransactions += 1
+ 
+     res.render('Data_M' , {Data : Data2});
+
+
+   });
+
+   
+
+    
+  
+  
+
+  
   
 
 module.exports = router;

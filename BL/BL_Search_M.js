@@ -17,7 +17,7 @@ const Search = async function(obj)
    console.log(resp2.Movies.length+"-------------------");
 
     resp2.Movies.forEach(x => {
-        Movies[Movies.length] = {"name" : x.Name, "language" : x.Language, "genres" : x.genres}
+        Movies[Movies.length] = {"name" : x.Name, "language" : x.Language, "genres" : x.genres,"image":{"medium":x.image}}
         console.log(Movies.length+"-------------------"+ Movies[240].name);
     });
 

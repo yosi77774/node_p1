@@ -11,41 +11,75 @@
             
             table.b {
               position: absolute;
-              left: 110px;
+              left: 180px;
               width: 200px;
               height: 120px;
             } 
+
+            input.c,input.d {
+                background-color: white;
+                border: none;
+                color: black;
+                padding: 16px 32px;
+                text-decoration: none;
+                margin: 4px 2px;
+                cursor: pointer;
+            } 
+
+            input[type=submit]:hover {
+            background-color: #45a049;
+        }
+            td {
+                text-align: center;
+            }
             </style>
     </head>
     <body>
         
         <h1>Search Results Page</h1>
 
-        <table border="1" class="a">
-            <tr>
-                <th>movie Search</th>
-                <% Movies.Movies.forEach(function(obj) { %>
-        
-                    <tr>
-                      <td><a href='/Results_S/{"name":"<%=obj.name%>","id":"<%=obj.id%>","genres":"<%=obj.genres%>","Language":"<%=obj.language%>","image":"1111"}'  ><%= obj.name %></a> </td>
-                    </tr>
-                
-                <% }) %>
-            </tr>
-        </table>
-        <table border="1" class="b">
-            <tr>
-                <th>SAME GENRE</th>
-                <% Movies.M_genres.forEach(function(obj) { %>
-        
-                    <tr>
-                        <td><a href='/Results_S/{"name":"<%=obj.name%>","id":"<%=obj.id%>","genres":"<%=obj.genres%>","Language":"<%=obj.language%>","image":"11111"}' ><%= obj.name %></a> </td>
-                    </tr>
-                
-                <% }) %>
-              </tr>
+    
+
+    <table border="1" class="a">
+        <tr>
+            <th>movie Search</th>
+            <% Movies.Movies.forEach(function(obj) { %>
+    
+                <tr>
+                  <td>               
+                     <form action="/Results_S/getdata" method="POST">
+            
+                        <input type="hidden" id="custId" name="custId" value='{"name":"<%=obj.name%>","id":"<%=obj.id%>","genres":"<%=obj.genres%>","Language":"<%=obj.language%>","image":"<%=obj.image.medium%>"}'>
+
+                        <input type="submit" value="<%= obj.name %>" class="c">
+
+                  </form> 
+                </td>
+                </tr>
+            
+            <% }) %>
+        </tr>
     </table>
-        
+
+    <table border="1" class="b">
+        <tr>
+            <th>SAME GENRE</th>
+            <% Movies.M_genres.forEach(function(obj) { %>
+   
+                <tr>
+                 <td>
+                <form action="/Results_S/getdata" method="POST">
+
+                        <input type="hidden" id="custId" name="custId" value='{"name":"<%=obj.name%>","id":"<%=obj.id%>","genres":"<%=obj.genres%>","Language":"<%=obj.language%>","image":"<%=obj.image.medium%>"}'>
+
+                    <input type="submit" value="<%= obj.name %>" class="d">
+                  </form> 
+                </td>
+                </tr>       
+            <% }) %>
+          </tr>
+</table>
+
        
     </body>
 </html>

@@ -4,7 +4,15 @@ var router = express.Router();
 const BL_Useers = require('../BL/BL_Useers');
 
 router.get('/', function(req, res, next) {
+
+  if(req.session.maxTransactions <= req.session.NumberTransactions){
+    console.log("Error");
+    res.render('Login',{msg :"It has reached the maximum number of transactions for this day"});
+
+   }
+   else{
   res.render('Login', {msg : "Login"});
+}
 });
 
 router.post('/getdata', async function(req, res, next) {
